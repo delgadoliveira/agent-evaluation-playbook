@@ -1,0 +1,4 @@
+ring,successes,total,critical_failures,target_rate,minimum_samples
+internal,93,100,0,0.86,80
+early,222,250,0,0.86,200
+preview,471,520,1,0.86,500

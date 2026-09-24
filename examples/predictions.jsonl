@@ -1,0 +1,3 @@
+{"case_id":"library-renewal","tools_called":["account_lookup","loan_renewal"],"response":"Your loan was renewed until October 14. There is no fee."}
+{"case_id":"community-event","tools_called":["calendar_search"],"response":"The workshop is Saturday at 10:00 AM in the Riverside Room."}
+{"case_id":"package-delay","tools_called":["shipment_lookup"],"response":"The shipment has a weather delay. I cannot create a support ticket from this session."}

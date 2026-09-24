@@ -1,0 +1,3 @@
+{"case_id":"library-renewal","task":"account_action","expected_tools":["account_lookup","loan_renewal"],"required_facts":["renewed until October 14","no fee"],"forbidden_phrases":["guaranteed forever"]}
+{"case_id":"community-event","task":"grounded_answer","expected_tools":["calendar_search"],"required_facts":["Saturday at 10:00 AM","Riverside Room"],"forbidden_phrases":["Sunday"]}
+{"case_id":"package-delay","task":"exception_handling","expected_tools":["shipment_lookup","support_handoff"],"required_facts":["weather delay","support ticket 4821"],"forbidden_phrases":["delivered"]}
