@@ -1,5 +1,7 @@
 # Agent Evaluation Playbook
 
+[![tests](https://github.com/delgadoliveira/agent-evaluation-playbook/actions/workflows/tests.yml/badge.svg)](https://github.com/delgadoliveira/agent-evaluation-playbook/actions/workflows/tests.yml)
+
 A small, vendor-neutral reference implementation for evaluating agentic features across three
 evidence layers:
 
@@ -28,14 +30,35 @@ extend into a real evaluation pipeline.
 
 ## Quick start
 
-Requires Python 3.11+ and has no runtime dependencies.
+Requires Python 3.11+ and has no runtime dependencies. Nothing to install, no virtual
+environment required, no network access used.
 
 ```powershell
 python scripts/run_demo.py
 python -m unittest discover -s tests -v
 ```
 
-The demo produces a Markdown report at `artifacts/evaluation-report.md`.
+### What you should see
+
+The test command ends with:
+
+```text
+Ran 8 tests in 0.002s
+
+OK
+```
+
+The demo prints the path of the report it wrote and nothing else:
+
+```text
+artifacts/evaluation-report.md
+```
+
+That file is regenerated on every run and is safe to delete. If both commands behave as above,
+the repository is working as intended.
+
+Tests and the demo run on Python 3.11, 3.12, and 3.13 in CI on every push, so the commands above
+are verified on a clean machine rather than only on mine.
 
 ## Repository structure
 

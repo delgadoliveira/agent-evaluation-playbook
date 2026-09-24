@@ -1,0 +1,39 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Show interpreter
+        run: python --version
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Run end-to-end demo
+        run: python scripts/run_demo.py
+
+      - name: Confirm the demo produced a report
+        run: |
+          test -s artifacts/evaluation-report.md
+          echo "--- first 20 lines of generated report ---"
+          head -n 20 artifacts/evaluation-report.md
